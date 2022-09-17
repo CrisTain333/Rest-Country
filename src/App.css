@@ -1,38 +1,160 @@
-.App {
-  text-align: center;
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  
+}
+nav{
+  width: 80%;
+  margin: 0px auto;
+  font-family: 'Poppins', sans-serif;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.Dark{
+  display: flex;
+  align-items: center;
+}
+.main{
+  width: 80%;
+  margin: 5px auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.selector > select{
+  width: 14vw;
+    text-align: center;
+}
+.main-content{
+  width: 80%;
+  margin: 20px auto;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  column-gap: 20px;
+  row-gap: 20px;
+}
+.light{
+  background-color: white;
+  color: black;
+}
+.dark{
+  background-color: black;
+  color: white;
+}
+@media screen and (max-width:668px) {
+
+
+  .main-content{
+    grid-template-columns: repeat(1,1fr);
+  }  
+  nav{
+    width: 100%;
+    margin: 0px auto;
+    display: block;
+   text-align: center;
+  }
+  .Dark{
+    display: flex;
+    justify-content: center;
+    }
+    .main{
+      width: 90%;
+      margin: 5px auto;
+      display: block;
+     
+    }
+    .selector{
+      display: none;
+    }
+  
 }
 
-.App-logo {
-  height: 40vmin;
+
+
+
+
+
+
+
+
+
+
+
+.big {
+  font-size: 1.2em;
+}
+
+.square {
+  width: .7em;
+  height: .7em;
+  margin: .5em;
+  display: inline-block;
+}
+
+/* Custom dropdown */
+.custom-dropdown {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  margin: 10px; /* demo only */
+}
+
+.custom-dropdown select {
+  background-color: #7f8c8d;
+  color: #fff;
+  font-size: inherit;
+  padding: .5em;
+  padding-right: 2.5em; 
+  border: 0;
+  margin: 0;
+  border-radius: 3px;
+  text-indent: 0.01px;
+  text-overflow: '';
+  -webkit-appearance: button; /* hide default arrow in chrome OSX */
+}
+
+.custom-dropdown::before,
+.custom-dropdown::after {
+  content: "";
+  position: absolute;
   pointer-events: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.custom-dropdown::after { /*  Custom dropdown arrow */
+  content: "\25BC";
+  height: 1em;
+  font-size: .625em;
+  line-height: 1;
+  right: 1.2em;
+  top: 50%;
+  margin-top: -.5em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.custom-dropdown::before { /*  Custom dropdown arrow cover */
+  width: 2em;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  border-radius: 0 3px 3px 0;
 }
 
-.App-link {
-  color: #61dafb;
+.custom-dropdown select[disabled] {
+  color: rgba(0,0,0,.3);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.custom-dropdown select[disabled]::after {
+  color: rgba(0,0,0,.1);
+}
+
+.custom-dropdown::before {
+  background-color: rgba(0,0,0,.15);
+}
+
+.custom-dropdown::after {
+  color: rgba(0,0,0,.4);
 }
